@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_video_journey"
+    app:startDestination="@id/videoListFragment">
+
+    <fragment
+        android:id="@+id/videoListFragment"
+        android:name="com.sanket.ovyotestproject.presentation.ui.video.VideoListFragment"
+        android:label="VideoListFragment"
+        tools:layout="@layout/fragmet_video_list" >
+        <action
+            android:id="@+id/action_videoListFragment_to_videoPlayerFragment"
+            app:destination="@id/videoPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoPlayerFragment"
+        tools:layout="@layout/fragment_video_player"
+        android:name="com.sanket.ovyotestproject.presentation.ui.video.VideoPlayerFragment"
+        android:label="VideoPlayerFragment" >
+        <argument
+            android:name="video"
+            app:argType="string" />
+    </fragment>
+</navigation>
